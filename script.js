@@ -144,6 +144,15 @@ function showGreeting(name, team) {
 	const randomMsg = messages[Math.floor(Math.random() * messages.length)];
 	greetingEl.textContent = randomMsg;
 	greetingEl.style.display = 'block';
+	// Confetti animation
+	if (window.confetti) {
+		confetti({
+			particleCount: 120,
+			spread: 70,
+			origin: { y: 0.6 },
+			colors: ['#0071c5', '#28a745', '#ffd700', '#00cfff']
+		});
+	}
 }
 
 checkInForm.addEventListener('submit', function(e) {
